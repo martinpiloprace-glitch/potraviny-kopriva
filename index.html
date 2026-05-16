@@ -1,23 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
+    <meta name="description" content="Potraviny Kopřiva Brno - Čerstvé chlebíčky každý den za 33,90 Kč. Domácí zákusky, zmrzlina a čerstvé pečivo. Francouzská 44, Brno.">
+<meta name="keywords" content="potraviny Brno, chlebíčky Brno, domácí zákusky, čerstvé pečivo Brno, Francouzská Brno, PPL Brno">
+<meta name="author" content="Potraviny Kopřiva">
+
+<meta name="geo.region" content="CZ-BM">
+<meta name="geo.placename" content="Brno">
+<meta name="geo.position" content="49.2014;16.6215"> <meta name="ICBM" content="49.2014, 16.6215">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potraviny Kopřiva Brno</title>
+    <style>
+        
+        :root {
+            --chlebicky: #2c3e50;
+            --zakusky: #2c3e50;
+            --obchod: #2c3e50;
+            --dark: #2c3e50;
+            --light-bg: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #34495e;
+            margin: 0;
+            padding: 10px;
+            color: var(--dark);
+        }
+
+        header {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; font-weight: 900; }
+
+        /* INFO BAR S AUTOMATIKOU */
+        .info-bar {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+            border: 1px solid #ddd;
+        }
+
+        .info-bar span#svatek-jmeno { color: var(--zakusky); margin-left: 5px; }
+
+        .opening-badge {
+            background: white;
+            color: var(--zakusky);
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-weight: 900;
+            border: 3px solid var(--zakusky);
+            display: block;
+            max-width: 300px;
+            margin: 10px auto;
+            font-size: 1.5rem;
+        }
+
+        @keyframes vibrate {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(-15deg); }
+            20% { transform: rotate(15deg); }
+            30% { transform: rotate(-15deg); }
+            40% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .vibrate-icon { display: inline-block; animation: vibrate 2s infinite; margin-right: 10px; }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            height: fit-content;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .card-header {
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-header h2 { margin: 0; font-size: 2.2rem; text-transform: uppercase; font-weight: 900; }
+        .price-hero { font-size: 3rem; font-weight: 900; margin-top: 10px; }
+        .sub-hero { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; margin-top: 5px; background: rgba(0,0,0,0.1); padding: 5px 15px; border-radius: 10px; }
+
+        .card-content { padding: 30px; flex-grow: 1; }
+        .list { list-style: none; padding: 0; margin: 0; }
+        .list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #f8f8f8;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-footer { padding: 30px; background: #fafafa; margin-top: auto; }
+
+        .btn-call {
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            padding: 25px;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .btn-call:active { background: var(--zakusky); transform: scale(0.95); }
+
+        @media (min-width: 1024px) {
+            .cards-container { flex-direction: row; }
+            .card { max-width: 400px; }
+        }
+    </style>
 </head>
 <body>
-    
-    <strong><h1>nejlepsi videa</h1></strong>
-    <hr>
-    <p>1</p>
-    <iframe src="https://www.youtube.com/embed/znzi8Avq9_s?si=i9A_p7pZVGccfHUe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p>2</p>
-    <iframe src="https://www.youtube.com/embed/IazJB0VScXA?si=Uim1HjVli5Yg2MFa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <hr>
-    
-   
-    
 
-    
+    <header>
+        <h1>Potraviny Kopřiva</h1>
+        
+        <div class="info-bar">
+            <div id="live-clock">Načítání...</div>
+            <div style="font-size: 1rem; margin-top: 5px;">
+                Dnes má svátek: <span id="svatek-jmeno">...</span>
+            </div>
+        </div>
+
+        <div class="opening-badge">
+            🕒 7:00 – 20:00 KAŽDÝ DEN
+        </div>
+        <div style="text-align: center; margin: 15px auto 25px auto; color: #ffffff; font-family: 'Arial', sans-serif;">
+    <p style="font-size: 1.4rem; font-weight: bold; margin: 0; letter-spacing: 1px;">
+        📍 
+Francouzská 574/92, 602 00 Brno, Zábrdovice
+    </p>
+</div>
+        
+    </header>
+
+    <div class="cards-container">
+        <article class="card">
+            <div class="card-header" style="background-color: var(--chlebicky);">
+                <h2>🥖 Chlebíčky</h2>
+                <div class="price-hero">33,90 Kč</div>
+                <div class="sub-hero">Denně čerstvé</div>
+            </div>
+            <div class="card-content">
+                <ul class="list">
+                    <li>Šunkový na salátě</li>
+                    <li>Hermelínový</li>
+                    <li>Debrecínský</li>
+                    <li>Sýrový speciál</li>
+                    <li>Ruské vejce</li>
+                </ul>
+            </div>
+            
+                
+            
+        </article>
+
+        <article class="card">
+            <div class="card-header" style="background-color: var(--zakusky);">
+                <h2>🍰 Domácí zákusky</h2>
+                <div class="price-hero">Čtvrtek & Sobota</div>
+                
+            </div>
+            <div class="card-content">
+                <ul class="list">
+                    <li>Větrník Karamel <span style="color:#2c3e50;font-weight: 700;">64,90</span></li>
+                    <li>Kominíček <span style="color:#2c3e50;font-weight: 700;">63,90</span></li>
+                    <li>Indiánek <span style="color:#2c3e50;font-weight: 700;">44,90</span></li>
+                    <li>Věneček <span style="color:#2c3e50;font-weight: 700;">55,90</span></li>
+                    <li>Tartaletka <span style="color:#2c3e50;font-weight: 700;">69,90</span></li>
+                    <li>Lineta <span style="color:#2c3e50;font-weight: 700;">64,90</span></li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="tel:+420603333567" class="btn-call"><span class="vibrate-icon">📞</span> OBJEDNAT</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-header" style="background-color: var(--obchod);">
+                <h2>🛒 Náš Obchod</h2>
+                <div class="price-hero">Služby</div>
+                <div class="sub-hero">Vše na místě</div>
+            </div>
+            <div class="card-content">
+                <ul class="list">
+                    <li> Domácí zmrzlina</li>
+                    <li> Mléčné výrobky</li>
+                    <li> Cukrovinky</li>
+                    <li> Čerstvé pečivo</li>
+                    <li>PPL Výdej & Příjem</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        // SEZNAM SVÁTKŮ (Zkrácená ukázka pro funkčnost)
+        const svatky = {
+            "05-13": "Servác", "05-14": "Bonifác", "05-15": "Žofie", "05-16": "Přemysl", "05-17": "Aneta",
+            "05-18": "Nataša", "05-19": "Ivo", "05-20": "Zbyšek", "05-21": "Monika", "05-22": "Emil"
+            // Sem se doplňují ostatní dny ve formátu "MM-DD"
+        };
+
+        function updateClock() {
+            const now = new Date();
+            const days = ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'];
+            
+            // Čas a Datum
+            const dayName = days[now.getDay()];
+            const dateStr = now.toLocaleDateString('cs-CZ');
+            const timeStr = now.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('live-clock').innerHTML = dayName + ' ' + dateStr + ' | ' + timeStr;
+
+            // Svátek
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const klic = month + '-' + day;
+            document.getElementById('svatek-jmeno').innerText = svatky[klic] || "státní svátek";
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+    <div id="qr-reklama" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #000000; z-index: 99999; justify-content: center; align-items: center;">
+    <img id="reklama-foto" src="chlebicek-reklama.jpg" alt="Chlebíček" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var parametry = new URLSearchParams(window.location.search);
+        if (parametry.get('go') === 'chlebicky') {
+            var reklama = document.getElementById('qr-reklama');
+            var foto = document.getElementById('reklama-foto');
+            
+            // Pojistka: Pokud obrázek hodí chybu (nenalezen), reklamu hned skryjeme
+            foto.addEventListener('error', function() {
+                reklama.style.setProperty('display', 'none', 'important');
+                console.log("Obrázek chlebicek-reklama.jpg nebyl nalezen ve složce.");
+            });
+
+            // Zobrazení reklamy
+            reklama.style.setProperty('display', 'flex', 'important');
+            
+            // Po 3 sekundách kompletní skrytí
+            setTimeout(function() {
+                reklama.style.setProperty('display', 'none', 'important');
+            }, 3000);
+        }
+    });
+</script>
+
 </body>
 </html>
+    
+   
