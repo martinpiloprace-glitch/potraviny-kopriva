@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta name="description" content="Potraviny Kopřiva Brno - Čerstvé chlebíčky každý den za 33,90 Kč. Domácí zákusky, zmrzlina a čerstvé pečivo. Francouzská 44, Brno.">
-<meta name="keywords" content="potraviny Brno, chlebíčky Brno, domácí zákusky, čerstvé pečivo Brno, Francouzská Brno, PPL Brno">
-<meta name="author" content="Potraviny Kopřiva">
-
-<meta name="geo.region" content="CZ-BM">
-<meta name="geo.placename" content="Brno">
-<meta name="geo.position" content="49.2014;16.6215"> <meta name="ICBM" content="49.2014, 16.6215">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potraviny Kopřiva Brno</title>
+    <title>Potraviny Kopřiva Brno – Čerstvé chlebíčky a domácí zákusky</title>
+
+    <meta name="description" content="Potraviny Kopřiva Brno - Čerstvé chlebíčky každý den za 33,90 Kč. Domácí zákusky, zmrzlina a čerstvé pečivo. Francouzská 92, Brno.">
+    <meta name="keywords" content="potraviny Brno, chlebíčky Brno, domácí zákusky, čerstvé pečivo Brno, Francouzská Brno, PPL Brno, potraviny Kopřiva">
+    <meta name="author" content="Potraviny Kopřiva">
+    <meta name="robots" content="index, follow">
+
+    <meta name="geo.region" content="CZ-BM">
+    <meta name="geo.placename" content="Brno">
+    <meta name="geo.position" content="49.2014;16.6215"> 
+    <meta name="ICBM" content="49.2014, 16.6215">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.potravinykopriva.cz/">
+    <meta property="og:title" content="Potraviny Kopřiva Brno – Čerstvé chlebíčky každý den">
+    <meta property="og:description" content="Stavte se pro čerstvé chlebíčky (33,90 Kč), domácí zákusky nebo vyzvednout balík přes PPL. Otevřeno máme každý den 7:00 – 20:00.">
+    <meta property="og:image" content="chlebicek-reklama.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="cs_CZ">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Potraviny Kopřiva Brno">
+    <meta name="twitter:description" content="Čerstvé chlebíčky and domácí zákusky na Francouzské v Brně. Otevřeno denně.">
+    <meta name="twitter:image" content="chlebicek-reklama.jpg">
+
     <style>
-        
         :root {
             --chlebicky: #2c3e50;
             --zakusky: #2c3e50;
@@ -34,7 +50,7 @@
             margin: 30px 0;
         }
 
-        h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; font-weight: 900; }
+        h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; font-weight: 900; color: white; }
 
         /* INFO BAR S AUTOMATIKOU */
         .info-bar {
@@ -77,30 +93,32 @@
 
         .vibrate-icon { display: inline-block; animation: vibrate 2s infinite; margin-right: 10px; }
 
+        /* MOBILNÍ ZOBRAZENÍ */
         .cards-container {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
             max-width: 1250px;
             margin: 0 auto;
+            padding-bottom: 30px;
         }
 
         .card {
             background: white;
-            height: fit-content;
             border-radius: 30px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.25);
             display: flex;
             flex-direction: column;
             border: 1px solid #eee;
+            height: auto;
         }
 
         .card-header {
             padding: 40px 20px;
             text-align: center;
             color: white;
-            min-height: 180px;
+            min-height: 140px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -108,9 +126,23 @@
 
         .card-header h2 { margin: 0; font-size: 2.2rem; text-transform: uppercase; font-weight: 900; }
         .price-hero { font-size: 3rem; font-weight: 900; margin-top: 10px; }
-        .sub-hero { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; margin-top: 5px; background: rgba(0,0,0,0.1); padding: 5px 15px; border-radius: 10px; }
+        
+        .sub-hero { 
+            font-size: 1.2rem; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            margin-top: 12px; 
+            background: rgba(255,255,255,0.15); 
+            padding: 6px 15px; 
+            border-radius: 10px;
+            color: #ffffff; 
+        }
 
-        .card-content { padding: 30px; flex-grow: 1; }
+        .card-content { 
+            padding: 30px; 
+            flex-grow: 1; 
+        }
+        
         .list { list-style: none; padding: 0; margin: 0; }
         .list li {
             padding: 18px 0;
@@ -121,7 +153,11 @@
             justify-content: space-between;
         }
 
-        .card-footer { padding: 30px; background: #fafafa; margin-top: auto; }
+        .card-footer { 
+            padding: 30px; 
+            background: #fafafa; 
+            margin-top: auto; 
+        }
 
         .btn-call {
             background: var(--dark);
@@ -139,9 +175,17 @@
 
         .btn-call:active { background: var(--zakusky); transform: scale(0.95); }
 
+        /* POČÍTAČOVÉ ZOBRAZENÍ */
         @media (min-width: 1024px) {
-            .cards-container { flex-direction: row; }
-            .card { max-width: 400px; }
+            .cards-container { 
+                flex-direction: row; 
+                justify-content: center;
+                align-items: stretch; 
+            }
+            .card { 
+                flex: 1;
+                max-width: 400px; 
+            }
         }
     </style>
 </head>
@@ -161,18 +205,16 @@
             🕒 7:00 – 20:00 KAŽDÝ DEN
         </div>
         <div style="text-align: center; margin: 15px auto 25px auto; color: #ffffff; font-family: 'Arial', sans-serif;">
-    <p style="font-size: 1.4rem; font-weight: bold; margin: 0; letter-spacing: 1px;">
-         
-Francouzská 574/92, 602 00 Brno, Zábrdovice
-    </p>
-</div>
-        
+            <p style="font-size: 1.4rem; font-weight: bold; margin: 0; letter-spacing: 1px;">
+                Francouzská 574/92, 602 00 Brno, Zábrdovice
+            </p>
+        </div>
     </header>
 
     <div class="cards-container">
         <article class="card">
             <div class="card-header" style="background-color: var(--chlebicky);">
-                <h2> Chlebíčky</h2>
+                <h2>Chlebíčky</h2>
                 <div class="price-hero">33,90 Kč</div>
                 <div class="sub-hero">Denně čerstvé</div>
             </div>
@@ -185,16 +227,12 @@ Francouzská 574/92, 602 00 Brno, Zábrdovice
                     <li>Ruské vejce</li>
                 </ul>
             </div>
-            
-                
-            
         </article>
 
         <article class="card">
             <div class="card-header" style="background-color: var(--zakusky);">
-                <h2> Domácí zákusky</h2>
-                <div class="price-hero">Čtvrtek & Sobota</div>
-                
+                <h2>Domácí zákusky</h2>
+                <div class="price-hero" style="font-size: 2.2rem;">Čtvrtek & Sobota</div>
             </div>
             <div class="card-content">
                 <ul class="list">
@@ -206,48 +244,45 @@ Francouzská 574/92, 602 00 Brno, Zábrdovice
                     <li>Lineta <span style="color:#2c3e50;font-weight: 700;">64,90</span></li>
                 </ul>
             </div>
-            <div class="card-footer">
-                <a href="tel:+420603333567" class="btn-call"><span class="vibrate-icon">📞</span> OBJEDNAT</a>
-            </div>
         </article>
 
         <article class="card">
             <div class="card-header" style="background-color: var(--obchod);">
-                <h2> Náš Obchod</h2>
+                <h2>Náš Obchod</h2>
                 <div class="price-hero">Služby</div>
                 <div class="sub-hero">Vše na místě</div>
             </div>
             <div class="card-content">
                 <ul class="list">
-                    <li> Domácí zmrzlina</li>
-                    <li> Mléčné výrobky</li>
-                    <li> Cukrovinky</li>
-                    <li> Čerstvé pečivo</li>
+                    <li>Domácí zmrzlina</li>
+                    <li>Mléčné výrobky</li>
+                    <li>Cukrovinky</li>
+                    <li>Čerstvé pečivo</li>
                     <li>PPL Výdej & Příjem</li>
                 </ul>
+            </div>
+            <div class="card-footer">
+                <a href="tel:+420603333567" class="btn-call"><span class="vibrate-icon">📞</span> OBJEDNAT</a>
             </div>
         </article>
     </div>
 
     <script>
-        // SEZNAM SVÁTKŮ (Zkrácená ukázka pro funkčnost)
+        // SEZNAM SVÁTKŮ
         const svatky = {
             "05-13": "Servác", "05-14": "Bonifác", "05-15": "Žofie", "05-16": "Přemysl", "05-17": "Aneta",
             "05-18": "Nataša", "05-19": "Ivo", "05-20": "Zbyšek", "05-21": "Monika", "05-22": "Emil"
-            // Sem se doplňují ostatní dny ve formátu "MM-DD"
         };
 
         function updateClock() {
             const now = new Date();
             const days = ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'];
             
-            // Čas a Datum
             const dayName = days[now.getDay()];
             const dateStr = now.toLocaleDateString('cs-CZ');
             const timeStr = now.toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             document.getElementById('live-clock').innerHTML = dayName + ' ' + dateStr + ' | ' + timeStr;
 
-            // Svátek
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const day = String(now.getDate()).padStart(2, '0');
             const klic = month + '-' + day;
@@ -268,16 +303,13 @@ Francouzská 574/92, 602 00 Brno, Zábrdovice
             var reklama = document.getElementById('qr-reklama');
             var foto = document.getElementById('reklama-foto');
             
-            // Pojistka: Pokud obrázek hodí chybu (nenalezen), reklamu hned skryjeme
             foto.addEventListener('error', function() {
                 reklama.style.setProperty('display', 'none', 'important');
                 console.log("Obrázek chlebicek-reklama.jpg nebyl nalezen ve složce.");
             });
 
-            // Zobrazení reklamy
             reklama.style.setProperty('display', 'flex', 'important');
             
-            // Po 3 sekundách kompletní skrytí
             setTimeout(function() {
                 reklama.style.setProperty('display', 'none', 'important');
             }, 3000);
@@ -287,5 +319,3 @@ Francouzská 574/92, 602 00 Brno, Zábrdovice
 
 </body>
 </html>
-    
-   
